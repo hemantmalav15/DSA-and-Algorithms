@@ -1,7 +1,6 @@
-import java.io.*;
 import java.util.*;
 
-public class Main {
+public class main {
 
 	public static void solution(String str){
 		
