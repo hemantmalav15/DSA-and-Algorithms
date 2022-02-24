@@ -72,6 +72,14 @@ public class Main {
       }
     }
   }
+  /**Optimized Approach**/
+
+  // public static void mirror(Node node) {
+  //   for (Node child : node.children) {
+  //     mirror(child);
+  //   }
+  //   Collections.reverse(node.children);
+  // }
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
