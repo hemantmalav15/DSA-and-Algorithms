@@ -79,36 +79,20 @@ public class Main {
         display(node.right);
     }
 
-    public static Node remove(Node node, int data) {
-        if (node == null) {
-            return null;
-        }
-        if (data > node.data) {
-            node.right = remove(node.right, data);
-        } else if (data < node.data) {
-            node.left = remove(node.left, data);
-        } else {
-            if (node.left != null && node.right != null) {
-                int lmax = max(node.left);
-                node.data = lmax;
-                node.left = remove(node.left, lmax);
-                return node;
-            } else if (node.left != null) {
-                return node.left;
-            } else if (node.right != null) {
-                return node.right;
-            } else {
-                return null;
-            }
-        }
-        return node;
-    }
+    // This function will print all the node in a given range
+    public static void pir(Node node, int d1, int d2) {
 
-    public static int max(Node node) {
-        if (node.right != null) {
-            return max(node.right);
+        if (node == null) {
+            return;
+        }
+        if (node.data > d1 && node.data > d2) {
+            pir(node.left, d1, d2);
+        } else if (node.data < d1 && node.data < d2) {
+            pir(node.right, d1, d2);
         } else {
-            return node.data;
+            pir(node.left, d1, d2);
+            System.out.println(node.data);
+            pir(node.right, d1, d2);
         }
     }
 
@@ -125,12 +109,11 @@ public class Main {
             }
         }
 
-        int data = Integer.parseInt(br.readLine());
+        int d1 = Integer.parseInt(br.readLine());
+        int d2 = Integer.parseInt(br.readLine());
 
         Node root = construct(arr);
-        root = remove(root, data);
-
-        display(root);
+        pir(root, d1, d2);
     }
 
 }
