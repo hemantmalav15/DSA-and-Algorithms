@@ -1,4 +1,4 @@
-class Solution {
+class main {
     public int peakIndexInMountainArray(int[] arr) {
         
          int lo = 0, hi = arr.length - 1;
