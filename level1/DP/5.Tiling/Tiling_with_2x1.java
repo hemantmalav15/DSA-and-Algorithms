@@ -15,6 +15,19 @@ public class Main {
         int ans2 = tiling(n - 2, dp);
         return dp[n] = ans1 + ans2;
     }
+    // Optimised Code
+    public static int waysOpti(int n){
+        
+        int one = 1;
+        int two = 2;
+        for(int i = 3; i<=n; i++)
+            {
+                int myAns = one + two;
+                one = two;
+                two = myAns;
+            }
+        return two;
+    }
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
