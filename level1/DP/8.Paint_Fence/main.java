@@ -7,6 +7,11 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
 
+        if (n == 1) {
+            System.out.println(k);
+            return;
+        }
+
         long xx = k * 1;
         long xy = k * (k - 1);
 
