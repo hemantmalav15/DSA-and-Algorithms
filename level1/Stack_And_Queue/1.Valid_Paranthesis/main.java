@@ -1,4 +1,4 @@
-public class main {
+public class Main {
 
     public boolean isValid(String s) {
 
@@ -11,13 +11,17 @@ public class main {
             } else {
                 if (st.size() == 0) {
                     return false;
-                } else if (ch == ')' && st.peek() != '(') {
+                } 
+                else if (ch == ')' && st.peek() != '(') {
                     return false;
-                } else if (ch == '}' && st.peek() != '{') {
+                }
+                 else if (ch == '}' && st.peek() != '{') {
                     return false;
-                } else if (ch == ']' && st.peek() != '[') {
+                }
+                 else if (ch == ']' && st.peek() != '[') {
                     return false;
-                } else {
+                }
+                 else {
                     st.pop();
                 }
             }
