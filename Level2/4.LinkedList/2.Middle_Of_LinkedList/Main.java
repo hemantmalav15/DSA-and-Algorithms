@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Main {
     public static class ListNode {
         int val = 0;
@@ -23,22 +21,5 @@ class Main {
             fp = fp.next.next;
         }
         return sp;
-    }
-
-    public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        ListNode dummy = new ListNode(-1);
-        ListNode prev = dummy;
-        while (n-- > 0) {
-            prev.next = new ListNode(scn.nextInt());
-            prev = prev.next;
-        }
-
-        ListNode head = midNode(dummy.next);
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
     }
 }

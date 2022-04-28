@@ -1,4 +1,6 @@
-class main {
+package Leetcode.Arrays.Peek_Index_In_Mountain;
+
+public class main {
     public int peakIndexInMountainArray(int[] arr) {
         
          int lo = 0, hi = arr.length - 1;

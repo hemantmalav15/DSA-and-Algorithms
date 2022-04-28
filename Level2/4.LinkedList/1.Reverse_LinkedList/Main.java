@@ -25,19 +25,20 @@ class Main {
     }
 
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        ListNode dummy = new ListNode(-1);
-        ListNode prev = dummy;
-        while (n-- > 0) {
-            prev.next = new ListNode(scn.nextInt());
-            prev = prev.next;
-        }
+        try (Scanner scn = new Scanner(System.in)) {
+            int n = scn.nextInt();
+            ListNode dummy = new ListNode(-1);
+            ListNode prev = dummy;
+            while (n-- > 0) {
+                prev.next = new ListNode(scn.nextInt());
+                prev = prev.next;
+            }
 
-        ListNode head = reverse(dummy.next);
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
+            ListNode head = reverse(dummy.next);
+            while (head != null) {
+                System.out.print(head.val + " ");
+                head = head.next;
+            }
         }
     }
 }
