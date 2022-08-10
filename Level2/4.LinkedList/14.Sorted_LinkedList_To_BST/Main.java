@@ -1,4 +1,4 @@
-/*Linked List Node
+//Linked List Node
 class LNode
 {
     int data;
@@ -20,7 +20,7 @@ class TNode
         left=right=null;
     }
     
-}*/
+}
 
 class Solution
 {
