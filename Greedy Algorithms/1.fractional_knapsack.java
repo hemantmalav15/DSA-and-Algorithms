@@ -1,3 +1,11 @@
+import java.util.*;
+class Item {
+    int value, weight;
+    Item(int x, int y){
+        this.value = x;
+        this.weight = y;
+    }
+}
 class Solution
 {
     class Pair implements Comparable<Pair>{
