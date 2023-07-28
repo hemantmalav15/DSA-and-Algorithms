@@ -1,0 +1,59 @@
+class Solution {
+    public static boolean isOperator(char ch){
+        if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^'){
+            return true;
+        }
+        return false;
+    }
+    public static int precedence(char ch){
+        if(ch == '^'){
+            return 3;
+        }
+        else if(ch == '*' || ch == '/'){
+            return 2;
+        }
+        else if(ch == '+' || ch == '-'){
+            return 1;
+        }
+        return 0;
+    }
+    // Function to convert an infix expression to a postfix expression.
+    public static String infixToPostfix(String exp) {
+        Stack<Character> st = new Stack<>();
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i < exp.length(); i++){
+            char ch = exp.charAt(i);
+            if(isOperator(ch)){
+                if(st.size() == 0 || st.peek() == '('){
+                    st.push(ch);
+                }
+                else if(precedence(ch) > precedence(st.peek())){
+                    st.push(ch);
+                }
+                else{
+                    while(st.size() > 0 && precedence(ch) <= precedence(st.peek()) && st.peek() != '('){
+                        sb.append(st.pop());
+                    }
+                    st.push(ch);
+                }
+            }
+            else if(ch == '('){
+                st.push(ch);
+            }
+            else if(ch == ')'){
+                while(st.size() > 0 && st.peek() != '('){
+                    sb.append(st.pop());
+                }
+                st.pop();
+            }
+            else{
+                sb.append(ch);
+            }
+        }
+        while(st.size() > 0){
+            sb.append(st.pop());
+        }
+        return new String(sb);
+    }
+}
